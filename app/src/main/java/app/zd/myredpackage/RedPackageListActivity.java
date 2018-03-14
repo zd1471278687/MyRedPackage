@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ import app.zd.myredpackage.view.RedPackageView;
  */
 
 public class RedPackageListActivity extends Activity implements RedPackageView {
+    private TextView mDescribeTv;
     private ViewGroupListView mRedPackageVglv;
     private RedPackageParam mRedPackageData;
     private RedPackagePresenter mPresenter;
@@ -44,6 +46,10 @@ public class RedPackageListActivity extends Activity implements RedPackageView {
 
     private void initView() {
         mRedPackageVglv = (ViewGroupListView) findViewById(R.id.vglv_red_package);
+        mDescribeTv = (TextView) findViewById(R.id.tv_describe);
+        if (mRedPackageData != null) {
+            mDescribeTv.setText(mRedPackageData.describe);
+        }
     }
 
     private void initData() {

@@ -23,8 +23,8 @@ public class RedPackagePresenter {
     }
 
     public void createRedPackageList(RedPackageParam packageParam) {
-        if (packageParam != null) {
-            mModel.spiltRedPackets(packageParam.amount, packageParam.amount.intValue());
+        if (packageParam != null && mView != null) {
+            mView.initREdPackageList(mModel.getRedPackageList(packageParam.amount, packageParam.number.intValue()));
         }
     }
 }

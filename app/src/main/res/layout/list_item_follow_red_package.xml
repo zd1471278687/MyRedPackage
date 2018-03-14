@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/ziv_user_header"
+        android:id="@+id/iv_user_header"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_centerVertical="true"
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_toRightOf="@+id/ziv_user_header">
+        android:layout_toRightOf="@+id/iv_user_header">
 
         <TextView
             android:id="@+id/tv_user_name"
@@ -46,7 +46,7 @@
         android:layout_below="@+id/ll_account_money"
         android:layout_marginBottom="12dp"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/ziv_user_header"
+        android:layout_toRightOf="@+id/iv_user_header"
         android:ellipsize="end"
         android:maxLines="1"
         android:textColor="@color/gray_999999"
@@ -55,6 +55,6 @@
     <View
         android:id="@+id/view_line"
         style="@style/horizontal_driver_style"
-        android:layout_below="@+id/ziv_user_header" />
+        android:layout_below="@+id/iv_user_header" />
 
 </RelativeLayout>

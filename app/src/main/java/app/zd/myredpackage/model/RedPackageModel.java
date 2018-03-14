@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.zd.myredpackage.bean.FollowRedPackage;
+import app.zd.myredpackage.utils.TimeUtil;
+
 /**
  * 红包列表model
  * Created by zhangdong on 2018/3/11.
@@ -24,13 +27,41 @@ public class RedPackageModel {
     }
 
     /**
+     * 获取领红包列表数据
+     *
+     * @param money 总金额
+     * @param count 总数量
+     * @return 红包列表数据
+     */
+    public List<FollowRedPackage> getRedPackageList(BigDecimal money, int count) {
+        List<BigDecimal> amountList = spiltRedPackets(money, count);
+        if (amountList == null || amountList.size() == 0) {
+            return null;
+        }
+        List<FollowRedPackage> redPackageList = new ArrayList<>();
+        FollowRedPackage followRedPackage;
+        for (int i = 0, size = amountList.size(); i < size; i++) {
+            BigDecimal amount = amountList.get(i);
+            if (amount == null) {
+                continue;
+            }
+            followRedPackage = new FollowRedPackage();
+            followRedPackage.amount = amount;
+            followRedPackage.nickName = "红包是我的" + i;
+            followRedPackage.time = TimeUtil.getCurrentTime(TimeUtil.MMDDHHMM);
+            redPackageList.add(followRedPackage);
+        }
+        return redPackageList;
+    }
+
+    /**
      * 分红包
      *
      * @param money
      * @param count
      * @return
      */
-    public List<BigDecimal> spiltRedPackets(BigDecimal money, int count) {
+    private List<BigDecimal> spiltRedPackets(BigDecimal money, int count) {
         //首先判断红包是否合情理
         if (!isRight(money, count)) {
             return null;

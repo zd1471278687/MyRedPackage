@@ -12,4 +12,6 @@
     <string name="default_leave_message_hint">恭喜发财，大吉大利</string>
     <string name="input_red_package">塞进红包</string>
     <string name="chinese_yuan">%1$s元</string>
+    <string name="red_package_price_tip">红包金额必须大于0元</string>
+    <string name="red_package_number_tip">红包数量必须大于0个</string>
 </resources>

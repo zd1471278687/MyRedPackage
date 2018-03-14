@@ -73,7 +73,7 @@
                     android:textSize="@dimen/ts_16" />
 
                 <TextView
-                    android:id="@+id/tv_get_red_package_amount"
+                    android:id="@+id/tv_describe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_user_name"
